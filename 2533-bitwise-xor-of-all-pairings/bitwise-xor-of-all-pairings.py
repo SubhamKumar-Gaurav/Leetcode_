@@ -14,8 +14,8 @@ class Solution:
             for i in range(1,len(nums2)) : 
                 ans=ans^nums2[i]
             return ans 
-        elif len(nums2)%2 : 
+        else : 
             ans=nums1[0] 
             for i in range(1,len(nums1)) : 
                 ans = ans^nums1[i] 
-            return ans
+            return ans 
