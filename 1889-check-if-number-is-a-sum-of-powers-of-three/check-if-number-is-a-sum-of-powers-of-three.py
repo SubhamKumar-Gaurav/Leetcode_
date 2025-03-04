@@ -1,11 +1,12 @@
 class Solution:
-    def checkPowersOfThree(self, n: int) -> bool: 
-        def backtrack(i, curr) : 
-            if curr==n : 
-                return True 
-            if curr>n or 3**i>n : 
-                return False 
-            if backtrack(i+1, curr+3**i) : 
-                return True 
-            return backtrack(i+1, curr)  
-        return backtrack(0, 0)
+    def checkPowersOfThree(self, n: int) -> bool:  
+        i=0 
+        while 3**(i+1) <= n : 
+            i+=1
+        
+        while i>=0 : 
+            power=3**i 
+            if power<=n : 
+                n-=power
+            i-=1 
+        return n==0
