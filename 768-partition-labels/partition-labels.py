@@ -3,10 +3,12 @@ class Solution:
         d=defaultdict(list) 
         for i in s : 
             d[i]=[float('inf'), float("-inf")] 
-        for i in range(len(s)) : 
+
+        for i in range(len(s)) :    # d[char] = [first_occurence, last_occurence]
             d[s[i]][0]=min(i, d[s[i]][0])
             d[s[i]][1]=max(i, d[s[i]][1]) 
-        arr=[] 
+
+        arr=[]         # Merge intervals 
         for i in d : 
             arr.append(d[i])
         arr.sort(key= lambda x: x[0])
@@ -19,8 +21,9 @@ class Solution:
                 arr[prev]=arr[curr] 
         new_arr=[] 
         for i in range(prev+1) : 
-            new_arr.append(arr[i]) 
-        res=[]
+            new_arr.append(arr[i])
+
+        res=[]       # length of the interval 
         for i,j in new_arr : 
             res.append(j-i+1) 
         return res 
