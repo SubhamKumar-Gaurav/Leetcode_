@@ -11,5 +11,4 @@ class Solution:
             if s[i]==s[length] : 
                 length+=1 
                 lps[i]=length 
-        new=s[::-1] 
-        return new[:lps[-1]][::-1]
+        return s[len(s)-lps[-1]:]
