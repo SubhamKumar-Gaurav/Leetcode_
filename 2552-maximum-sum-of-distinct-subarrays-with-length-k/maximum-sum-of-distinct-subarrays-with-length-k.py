@@ -20,9 +20,6 @@ class Solution:
                 if d[nums[l]]==0 : 
                     del d[nums[l]] 
                 l+=1
-                if r-l+1==k and len(d)==k : 
-                    maxSum=max(maxSum, currSum)
-                
             if r-l+1==k and len(d)==k :  
                 maxSum=max(maxSum, currSum)
         return maxSum 
