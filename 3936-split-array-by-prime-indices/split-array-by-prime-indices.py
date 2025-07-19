@@ -16,7 +16,7 @@ class Solution:
         sum_A=0 
         sum_B=0
         for i in range(len(nums)) : 
-            if not arr[i] : 
+            if arr[i] : 
                 sum_A+=nums[i] 
             else : 
                 sum_B+=nums[i] 
