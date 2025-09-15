@@ -18,5 +18,6 @@ class Solution:
         for i in range(1,n) : 
             totalArrSum+=nums[i] 
             nums[i]=-nums[i] 
-        res=totalArrSum+kadanesAlgo(nums) 
-        return max(res, maxSubarraySum)
+        minSubarraySum=kadanesAlgo(nums) 
+        maxCircularSubarraySum=totalArrSum+minSubarraySum 
+        return max(maxCircularSubarraySum, maxSubarraySum)
