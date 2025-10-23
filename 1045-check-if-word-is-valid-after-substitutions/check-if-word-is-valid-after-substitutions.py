@@ -1,21 +1,13 @@
 class Solution: 
     def isValid(self, s: str) -> bool: 
-        st=list(s) 
-        i=0 
-        while len(st)>3 and i<len(st)-2 : 
-            if st[i]=="a" and st[i+1]=="b" and st[i+2]=="c" : 
-                st.pop(i) 
-                st.pop(i) 
-                st.pop(i) 
-                if i>=2 : 
-                    i-=2 
-                else : 
-                    i-=1 
-            else :
-                i+=1 
-                
-        if len(st)<3 : 
-            return False 
-        if st[0]=="a" and st[1]=="b" and st[2]=="c" : 
+        st=[] 
+        for i in s : 
+            st.append(i) 
+            if len(st)>=3 : 
+                if st[-1]=="c" and st[-2]=="b" and st[-3]=="a" : 
+                    st.pop() 
+                    st.pop() 
+                    st.pop() 
+        if len(st)==0 : 
             return True 
         return False 
