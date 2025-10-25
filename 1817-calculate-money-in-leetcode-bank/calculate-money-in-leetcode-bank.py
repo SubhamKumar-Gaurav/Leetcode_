@@ -1,19 +1,11 @@
 class Solution:
     def totalMoney(self, n: int) -> int: 
-        i=0 
-        monday=1 
-        res=0  
-        while i<n : 
-            res+=monday 
-            prev=monday
-            i+=1
-            monday+=1 
-            j=0 
-            while j<6 and i<n : 
-                res+=prev+1 
-                prev+=1 
-                j+=1 
-                i+=1
+        total_weeks=n//7 
+        remainder=n%7 
+        res=0 
+        i=0
+        while i<total_weeks : 
+            res+=28+(7*i) 
+            i+=1 
+        res+=(remainder*(remainder+1))//2 + (remainder*i)
         return res 
-            
-            
