@@ -13,24 +13,17 @@ class Solution:
             return gcdVal 
 
         n=len(nums) 
+
+        # count for the ones which are already present in the array
         one=0 
         for i in range(n) : 
             if nums[i]==1 : 
                 one+=1  
         if one!=0 : 
-            return n-one 
+            return n-one  
 
-        if 1 in nums :  # if 1 is present in the array 
-            return n-1 
-
-        if len(set(nums))==1 :   # all elementsa are same 
-            return -1 
-
-        even=0    # all elements are even  
-        for i in nums : 
-            if i%2==0 : 
-                even+=1 
-        if even==n : 
+        # when all elements are same, then gcd will always be equal to that number
+        if len(set(nums))==1 :    
             return -1 
         
         steps=float('inf') 
