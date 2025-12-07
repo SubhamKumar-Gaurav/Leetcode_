@@ -1,8 +1,6 @@
 class Solution:
     def countOdds(self, low: int, high: int) -> int:
         diff=(high-low)//2 
-        if low%2 and high%2 : 
-            return diff+1 
-        elif low%2==0 and high%2==0 : 
+        if low%2==0 and high%2==0 : 
             return diff
         return diff+1
