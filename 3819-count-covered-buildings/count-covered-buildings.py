@@ -9,13 +9,13 @@ class Solution:
             rows[i].append(j) 
             cols[j].append(i) 
         
-        # sort the rows and cols list to apply binary search 
+        # sort the rows and cols list 
         for i in rows : 
             rows[i].sort() 
-        
         for j in cols :
             cols[j].sort() 
         
+        # if the curr building is neither first or last in that row and column, then obviously there exists some buildings on both the sides, we use two variables- one to check the rowWise and the other to check columnWise
         ans=0 
         for i, j in buildings : 
             rowWise=False 
