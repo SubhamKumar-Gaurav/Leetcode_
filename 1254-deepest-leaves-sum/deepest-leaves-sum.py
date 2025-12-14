@@ -10,7 +10,7 @@ class Solution:
     def deepestLeavesSum(self, root: Optional[TreeNode]) -> int: 
         q=deque() 
         q.append(root) 
-        arr=[] 
+        res=0 
 
         while q : 
             temp=[] 
@@ -22,5 +22,5 @@ class Solution:
                     q.append(node.left) 
                 if node.right : 
                     q.append(node.right) 
-            arr.append(temp) 
-        return sum(arr[-1]) 
+            res=sum(temp) 
+        return res 
