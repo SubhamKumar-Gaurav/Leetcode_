@@ -6,18 +6,8 @@
 #         self.right = right
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-        if root is None : 
-            return 0 
-        
-    
         def height(root) : 
             if root is None : 
                 return 0 
-            else : 
-                lHeight=height(root.left) 
-                rHeight=height(root.right) 
-                if lHeight>rHeight : 
-                    return lHeight+1 
-                else : 
-                    return rHeight+1 
+            return 1+max(height(root.left), height(root.right))
         return height(root) 
